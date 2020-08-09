@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NHibernateMVC5_Demo.Models.Employees>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>List of Employees</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.Name)</th>
+        <th>@Html.DisplayNameFor(m => m.Position)</th>
+        <th>@Html.DisplayNameFor(m => m.Office)</th>
+        <th>@Html.DisplayNameFor(m => m.Age)</th>
+        <th>@Html.DisplayNameFor(m => m.StartDate)</th>
+        <th>@Html.DisplayNameFor(m => m.Salary)</th>
+        <th>@Html.DisplayNameFor(m => m.DepartmentId)</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Position</td>
+            <td>@item.Office</td>
+            <td>@item.Age</td>
+            <td>@item.StartDate.ToString("dd-MMM-yyyy")</td>
+            <td>@item.Salary</td>
+            <td>@item.DepartmentId</td>
+        </tr>
+    }
+
+</table>
